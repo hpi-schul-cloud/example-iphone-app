@@ -8,22 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		8F2AF6C42277304800F816BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2AF6C32277304800F816BA /* AppDelegate.swift */; };
-		8F2AF6C62277304800F816BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2AF6C52277304800F816BA /* ViewController.swift */; };
+		8F2AF6C62277304800F816BA /* ViewControllerRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2AF6C52277304800F816BA /* ViewControllerRoot.swift */; };
 		8F2AF6C92277304800F816BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F2AF6C72277304800F816BA /* Main.storyboard */; };
 		8F2AF6CC2277304800F816BA /* example_iphone_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F2AF6CA2277304800F816BA /* example_iphone_app.xcdatamodeld */; };
 		8F2AF6CE2277304B00F816BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F2AF6CD2277304B00F816BA /* Assets.xcassets */; };
 		8F2AF6D12277304B00F816BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F2AF6CF2277304B00F816BA /* LaunchScreen.storyboard */; };
+		8F42794B229D454E00F3891C /* ViewControllerLecture1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F42794A229D454E00F3891C /* ViewControllerLecture1.swift */; };
+		8F42794D229D457B00F3891C /* ViewControllerLecture2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F42794C229D457B00F3891C /* ViewControllerLecture2.swift */; };
+		8F42794F229D459100F3891C /* ViewControllerL1Lesson1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F42794E229D459100F3891C /* ViewControllerL1Lesson1.swift */; };
+		8F427951229D45A900F3891C /* ViewControllerL1Lesson2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F427950229D45A900F3891C /* ViewControllerL1Lesson2.swift */; };
+		8F427953229D45F200F3891C /* ViewControllerL2Lesson1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F427952229D45F200F3891C /* ViewControllerL2Lesson1.swift */; };
+		8F427955229D460800F3891C /* ViewControllerL2Lesson2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F427954229D460800F3891C /* ViewControllerL2Lesson2.swift */; };
+		8F599B1A2289910700FF4720 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F599B192289910700FF4720 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8F2AF6C02277304800F816BA /* example-iphone-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-iphone-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2AF6C32277304800F816BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8F2AF6C52277304800F816BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8F2AF6C52277304800F816BA /* ViewControllerRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRoot.swift; sourceTree = "<group>"; };
 		8F2AF6C82277304800F816BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F2AF6CB2277304800F816BA /* example_iphone_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = example_iphone_app.xcdatamodel; sourceTree = "<group>"; };
 		8F2AF6CD2277304B00F816BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F2AF6D02277304B00F816BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F2AF6D22277304B00F816BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F2AF6D822819D7100F816BA /* example-iphone-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "example-iphone-app.entitlements"; sourceTree = "<group>"; };
+		8F42794A229D454E00F3891C /* ViewControllerLecture1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLecture1.swift; sourceTree = "<group>"; };
+		8F42794C229D457B00F3891C /* ViewControllerLecture2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLecture2.swift; sourceTree = "<group>"; };
+		8F42794E229D459100F3891C /* ViewControllerL1Lesson1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerL1Lesson1.swift; sourceTree = "<group>"; };
+		8F427950229D45A900F3891C /* ViewControllerL1Lesson2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerL1Lesson2.swift; sourceTree = "<group>"; };
+		8F427952229D45F200F3891C /* ViewControllerL2Lesson1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerL2Lesson1.swift; sourceTree = "<group>"; };
+		8F427954229D460800F3891C /* ViewControllerL2Lesson2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerL2Lesson2.swift; sourceTree = "<group>"; };
+		8F599B192289910700FF4720 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +71,21 @@
 		8F2AF6C22277304800F816BA /* example-iphone-app */ = {
 			isa = PBXGroup;
 			children = (
+				8F2AF6D822819D7100F816BA /* example-iphone-app.entitlements */,
 				8F2AF6C32277304800F816BA /* AppDelegate.swift */,
-				8F2AF6C52277304800F816BA /* ViewController.swift */,
+				8F2AF6C52277304800F816BA /* ViewControllerRoot.swift */,
 				8F2AF6C72277304800F816BA /* Main.storyboard */,
 				8F2AF6CD2277304B00F816BA /* Assets.xcassets */,
 				8F2AF6CF2277304B00F816BA /* LaunchScreen.storyboard */,
 				8F2AF6D22277304B00F816BA /* Info.plist */,
 				8F2AF6CA2277304800F816BA /* example_iphone_app.xcdatamodeld */,
+				8F599B192289910700FF4720 /* APIClient.swift */,
+				8F42794A229D454E00F3891C /* ViewControllerLecture1.swift */,
+				8F42794C229D457B00F3891C /* ViewControllerLecture2.swift */,
+				8F42794E229D459100F3891C /* ViewControllerL1Lesson1.swift */,
+				8F427950229D45A900F3891C /* ViewControllerL1Lesson2.swift */,
+				8F427952229D45F200F3891C /* ViewControllerL2Lesson1.swift */,
+				8F427954229D460800F3891C /* ViewControllerL2Lesson2.swift */,
 			);
 			path = "example-iphone-app";
 			sourceTree = "<group>";
@@ -99,6 +122,11 @@
 				TargetAttributes = {
 					8F2AF6BF2277304800F816BA = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -138,9 +166,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F2AF6C62277304800F816BA /* ViewController.swift in Sources */,
+				8F2AF6C62277304800F816BA /* ViewControllerRoot.swift in Sources */,
 				8F2AF6CC2277304800F816BA /* example_iphone_app.xcdatamodeld in Sources */,
+				8F427951229D45A900F3891C /* ViewControllerL1Lesson2.swift in Sources */,
+				8F427955229D460800F3891C /* ViewControllerL2Lesson2.swift in Sources */,
+				8F427953229D45F200F3891C /* ViewControllerL2Lesson1.swift in Sources */,
+				8F42794B229D454E00F3891C /* ViewControllerLecture1.swift in Sources */,
 				8F2AF6C42277304800F816BA /* AppDelegate.swift in Sources */,
+				8F42794D229D457B00F3891C /* ViewControllerLecture2.swift in Sources */,
+				8F42794F229D459100F3891C /* ViewControllerL1Lesson1.swift in Sources */,
+				8F599B1A2289910700FF4720 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,9 +321,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "example-iphone-app/example-iphone-app.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WP53SSE8S6;
 				INFOPLIST_FILE = "example-iphone-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,9 +341,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "example-iphone-app/example-iphone-app.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WP53SSE8S6;
 				INFOPLIST_FILE = "example-iphone-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

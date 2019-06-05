@@ -8,13 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewControllerRoot: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func goToPath1(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func goToPath2(_ sender: UIButton) {
+        
+    }
 
 }
 
