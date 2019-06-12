@@ -20,7 +20,36 @@
 		8F427953229D45F200F3891C /* ViewControllerL2Lesson1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F427952229D45F200F3891C /* ViewControllerL2Lesson1.swift */; };
 		8F427955229D460800F3891C /* ViewControllerL2Lesson2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F427954229D460800F3891C /* ViewControllerL2Lesson2.swift */; };
 		8F599B1A2289910700FF4720 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F599B192289910700FF4720 /* APIClient.swift */; };
+		8FC7C81322A806AF00445B6C /* lti_compliance_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FC7C81122A806AF00445B6C /* lti_compliance_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FC7C81622A806AF00445B6C /* lti_compliance_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC7C80F22A806AF00445B6C /* lti_compliance_ios.framework */; };
+		8FC7C81722A806AF00445B6C /* lti_compliance_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC7C80F22A806AF00445B6C /* lti_compliance_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FC7C81D22A807EE00445B6C /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC7C81C22A807EE00445B6C /* DeeplinkManager.swift */; };
+		8FC7C81E22A80A1000445B6C /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC7C81C22A807EE00445B6C /* DeeplinkManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8FC7C81422A806AF00445B6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F2AF6B82277304800F816BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FC7C80E22A806AF00445B6C;
+			remoteInfo = "lti-compliance-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8FC7C81B22A806AF00445B6C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8FC7C81722A806AF00445B6C /* lti_compliance_ios.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8F2AF6C02277304800F816BA /* example-iphone-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-iphone-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,10 +68,22 @@
 		8F427952229D45F200F3891C /* ViewControllerL2Lesson1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerL2Lesson1.swift; sourceTree = "<group>"; };
 		8F427954229D460800F3891C /* ViewControllerL2Lesson2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerL2Lesson2.swift; sourceTree = "<group>"; };
 		8F599B192289910700FF4720 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		8FC7C80F22A806AF00445B6C /* lti_compliance_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lti_compliance_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FC7C81122A806AF00445B6C /* lti_compliance_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lti_compliance_ios.h; sourceTree = "<group>"; };
+		8FC7C81222A806AF00445B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FC7C81C22A807EE00445B6C /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8F2AF6BD2277304800F816BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FC7C81622A806AF00445B6C /* lti_compliance_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FC7C80C22A806AF00445B6C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,7 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				8F2AF6C22277304800F816BA /* example-iphone-app */,
+				8FC7C81022A806AF00445B6C /* lti-compliance-ios */,
 				8F2AF6C12277304800F816BA /* Products */,
+				8FC7C81C22A807EE00445B6C /* DeeplinkManager.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				8F2AF6C02277304800F816BA /* example-iphone-app.app */,
+				8FC7C80F22A806AF00445B6C /* lti_compliance_ios.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,7 +134,27 @@
 			path = "example-iphone-app";
 			sourceTree = "<group>";
 		};
+		8FC7C81022A806AF00445B6C /* lti-compliance-ios */ = {
+			isa = PBXGroup;
+			children = (
+				8FC7C81122A806AF00445B6C /* lti_compliance_ios.h */,
+				8FC7C81222A806AF00445B6C /* Info.plist */,
+			);
+			path = "lti-compliance-ios";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8FC7C80A22A806AF00445B6C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FC7C81322A806AF00445B6C /* lti_compliance_ios.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		8F2AF6BF2277304800F816BA /* example-iphone-app */ = {
@@ -100,15 +164,35 @@
 				8F2AF6BC2277304800F816BA /* Sources */,
 				8F2AF6BD2277304800F816BA /* Frameworks */,
 				8F2AF6BE2277304800F816BA /* Resources */,
+				8FC7C81B22A806AF00445B6C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8FC7C81522A806AF00445B6C /* PBXTargetDependency */,
 			);
 			name = "example-iphone-app";
 			productName = "example-iphone-app";
 			productReference = 8F2AF6C02277304800F816BA /* example-iphone-app.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8FC7C80E22A806AF00445B6C /* lti-compliance-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FC7C81A22A806AF00445B6C /* Build configuration list for PBXNativeTarget "lti-compliance-ios" */;
+			buildPhases = (
+				8FC7C80A22A806AF00445B6C /* Headers */,
+				8FC7C80B22A806AF00445B6C /* Sources */,
+				8FC7C80C22A806AF00445B6C /* Frameworks */,
+				8FC7C80D22A806AF00445B6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "lti-compliance-ios";
+			productName = "lti-compliance-ios";
+			productReference = 8FC7C80F22A806AF00445B6C /* lti_compliance_ios.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -128,6 +212,10 @@
 							};
 						};
 					};
+					8FC7C80E22A806AF00445B6C = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
 				};
 			};
 			buildConfigurationList = 8F2AF6BB2277304800F816BA /* Build configuration list for PBXProject "example-iphone-app" */;
@@ -144,6 +232,7 @@
 			projectRoot = "";
 			targets = (
 				8F2AF6BF2277304800F816BA /* example-iphone-app */,
+				8FC7C80E22A806AF00445B6C /* lti-compliance-ios */,
 			);
 		};
 /* End PBXProject section */
@@ -156,6 +245,13 @@
 				8F2AF6D12277304B00F816BA /* LaunchScreen.storyboard in Resources */,
 				8F2AF6CE2277304B00F816BA /* Assets.xcassets in Resources */,
 				8F2AF6C92277304800F816BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FC7C80D22A806AF00445B6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,10 +272,27 @@
 				8F42794D229D457B00F3891C /* ViewControllerLecture2.swift in Sources */,
 				8F42794F229D459100F3891C /* ViewControllerL1Lesson1.swift in Sources */,
 				8F599B1A2289910700FF4720 /* APIClient.swift in Sources */,
+				8FC7C81E22A80A1000445B6C /* DeeplinkManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FC7C80B22A806AF00445B6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FC7C81D22A807EE00445B6C /* DeeplinkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8FC7C81522A806AF00445B6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FC7C80E22A806AF00445B6C /* lti-compliance-ios */;
+			targetProxy = 8FC7C81422A806AF00445B6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8F2AF6C72277304800F816BA /* Main.storyboard */ = {
@@ -320,6 +433,7 @@
 		8F2AF6D62277304B00F816BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "example-iphone-app/example-iphone-app.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -340,6 +454,7 @@
 		8F2AF6D72277304B00F816BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "example-iphone-app/example-iphone-app.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -354,6 +469,67 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8FC7C81822A806AF00445B6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WP53SSE8S6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "lti-compliance-ios/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.schulcloud.lti-compliance-ios";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8FC7C81922A806AF00445B6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WP53SSE8S6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "lti-compliance-ios/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.schulcloud.lti-compliance-ios";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -374,6 +550,15 @@
 			buildConfigurations = (
 				8F2AF6D62277304B00F816BA /* Debug */,
 				8F2AF6D72277304B00F816BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FC7C81A22A806AF00445B6C /* Build configuration list for PBXNativeTarget "lti-compliance-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FC7C81822A806AF00445B6C /* Debug */,
+				8FC7C81922A806AF00445B6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
