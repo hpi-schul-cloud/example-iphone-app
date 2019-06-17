@@ -9,76 +9,34 @@
 import Foundation
 import UIKit
 
-//class DeeplinkManager {
-//
-////    var rootString: String
-////    var rootViewController: UIViewController
-//    let treeRootNode: VCNode
-//
-//    func testManager(context: UIViewController) {
-////        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-////        let newViewController = storyBoard.instantiateViewController(withIdentifier: "L1Lesson2")
-//
-//        context.navigationController?.pushViewController(self.treeRootNode.getChildren()[0].getViewController(), animated: true)
-////        context.present(newViewController, animated: false, completion: nil)
-//    }
-//
-//    init(rootString: String?, with identifier: String) {
-////        self.rootString = rootString
-////        self.rootViewController = rootViewController
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let rootViewController = storyBoard.instantiateViewController(withIdentifier: identifier)
-//
-//        self.treeRootNode = VCNode.init(value: nil, viewController: rootViewController)
-//    }
-//
-//    func addChild() {
-//        self.treeRootNode.addChildFromString(value: "Lecture1", with: "Lecture1")
-//    }
-//}
-
 class VCNode {
-    private var value: String?
-    private var viewController: UIViewController
-    private var children: [VCNode] = []
-    private weak var parent: VCNode?
-    private var storyboard: UIStoryboard
-    private var context: UIViewController
+    var value: String?
+    var viewControllerIdentifier: String
+    var children: [VCNode] = []
+    weak var parent: VCNode?
+    var storyboard: UIStoryboard
+    var context: UIViewController
+    var isNamed: Bool {
+        get {
+            return value != nil
+        }
+    }
+    var hasParent: Bool {
+        get {
+            return parent != nil
+        }
+    }
     
     init(value: String?, viewControllerIdentifier: String, context: UIViewController) {
         self.value = value
         self.storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.viewController = self.storyboard.instantiateViewController(withIdentifier: viewControllerIdentifier)
+        self.viewControllerIdentifier = viewControllerIdentifier
         
         self.context = context
     }
     
-    func getChildren() -> [VCNode] {
-        return self.children
-    }
-    
     func getChildFor(name: String) -> VCNode? {
-        return self.children.first(where: {$0.getValue() == name})
-    }
-    
-    func getParent() -> VCNode? {
-        return self.parent
-    }
-    
-    func setParent(parent: VCNode) {
-        self.parent = parent
-    }
-    
-    func getValue() -> String? {
-        return self.value
-    }
-    
-    func getViewController() -> UIViewController {
-        return self.viewController
-    }
-    
-    func getContext() -> UIViewController {
-        return self.context
+        return self.children.first(where: {$0.value == name})
     }
     
     func add(child: VCNode) {
@@ -87,22 +45,50 @@ class VCNode {
     }
     
     func pushViewController(path: [String]) {
-        var path = path
-        let thisNode = path.removeFirst()
-//        self.storyboard.instantiateViewController(withIdentifier: thisNode)
-        // Hier liegt noch ein Fehler. Wir haben nicht für alle einen NavigationController
-        self.context.navigationController?.pushViewController(self.viewController, animated: true)
-        print(self.context.navigationController)
-        if(path.count > 0) {
+        if self.hasParent {
+            var path = path
+            let thisNode = path.removeFirst()
+            let viewController = self.storyboard.instantiateViewController(withIdentifier: self.viewControllerIdentifier)
+            self.context.navigationController?.pushViewController(viewController, animated: true)
+            print(self.viewControllerIdentifier)
+            if(path.count > 0) {
+                let childOnPath = self.getChildFor(name: path[0])
+                childOnPath?.pushViewController(path: path)
+            }
+        } else {
             let childOnPath = self.getChildFor(name: path[0])
             childOnPath?.pushViewController(path: path)
         }
     }
+
+//    fileprivate func pushViewController(path: [VCNode]) {
+//        var path = path
+//        for node in path {
+//            let vc = self.storyboard.instantiateViewController(withIdentifier: node.viewControllerIdentifier)
+//            self.context.navigationController?.pushViewController(vc, animated: true)
+//        }
+//    }
+//
+//    fileprivate func collectPathToViewController(path: [VCNode]) {
+//        var path = path
+//        if self.hasParent {
+//            path.insert(self, at: 0)
+//            self.parent!.collectPathToViewController(path: path)
+//        } else {
+//            self.pushViewController(path: path)
+//        }
+//    }
+//
+//    func showViewController() {
+//        if self.hasParent {
+//            self.parent!.collectPathToViewController(path: [self])
+//        }
+//    }
     
     func addChildFromString(value: String, with identifier: String) -> VCNode {
         let childNode = VCNode.init(value: value, viewControllerIdentifier: identifier, context: self.context)
         self.children.append(childNode)
-        childNode.setParent(parent: self)
+        childNode.parent = self
         
         return childNode
     }
