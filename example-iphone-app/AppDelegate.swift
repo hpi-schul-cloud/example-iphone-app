@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        nc.pushViewController(p1, animated: false)
 //        self.window?.rootViewController = nc
         let nc = UINavigationController()
-        ViewControllerRoot.pushViewController(onto: nc, using: ["Lecture1", "Lesson1"])
+        ViewControllerRoot.pushViewController(onto: nc, using: ["Lecture2", "Lesson1"])
         self.window?.rootViewController = nc
         
         

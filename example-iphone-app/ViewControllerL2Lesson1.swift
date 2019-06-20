@@ -13,7 +13,7 @@ class ViewControllerL2Lesson1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("Lecture 2 / Lesson 2")
+        print("Lecture 2 / Lesson 1")
         // Do any additional setup after loading the view.
     }
     
@@ -28,4 +28,23 @@ class ViewControllerL2Lesson1: UIViewController {
     }
     */
 
+}
+
+extension ViewControllerL2Lesson1: DeeplinkNode {
+    
+    static var route: String? {
+        return "Lesson1"
+    }
+    
+    static var childNodes: [DeeplinkNode.Type] {
+        return []
+    }
+    
+    static var storyboardId: String {
+        return "L2Lesson1"
+    }
+    
+    static var storyboardName: String {
+        return "Main"
+    }
 }

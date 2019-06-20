@@ -29,3 +29,22 @@ class ViewControllerL2Lesson2: UIViewController {
     */
 
 }
+
+extension ViewControllerL2Lesson2: DeeplinkNode {
+    
+    static var route: String? {
+        return "Lesson2"
+    }
+    
+    static var childNodes: [DeeplinkNode.Type] {
+        return []
+    }
+    
+    static var storyboardId: String {
+        return "L2Lesson2"
+    }
+    
+    static var storyboardName: String {
+        return "Main"
+    }
+}

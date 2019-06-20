@@ -37,7 +37,7 @@ extension ViewControllerLecture2: DeeplinkNode {
     }
     
     static var childNodes: [DeeplinkNode.Type] {
-        return []
+        return [ViewControllerL2Lesson1.self as DeeplinkNode.Type, ViewControllerL2Lesson2.self as DeeplinkNode.Type]
     }
     
     static var storyboardId: String {

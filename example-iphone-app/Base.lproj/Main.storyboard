@@ -52,7 +52,7 @@
         <!--Lecture 2-->
         <scene sceneID="DPN-zR-94x">
             <objects>
-                <viewController id="Ied-Wb-gcO" customClass="ViewControllerLecture2" customModule="example_iphone_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Lecture2" id="Ied-Wb-gcO" customClass="ViewControllerLecture2" customModule="example_iphone_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4nM-Ml-GGs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,7 +208,7 @@
         <!--L2 | Lesson 1-->
         <scene sceneID="Vqd-Vk-PbI">
             <objects>
-                <viewController id="4Mo-FO-CrR" customClass="ViewControllerL2Lesson1" customModule="example_iphone_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="L2Lesson1" id="4Mo-FO-CrR" customClass="ViewControllerL2Lesson1" customModule="example_iphone_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bNi-Fb-KRW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,7 +239,7 @@
         <!--L2 | Lesson 2-->
         <scene sceneID="8hC-v0-gNE">
             <objects>
-                <viewController id="5Ys-W6-GVX" customClass="ViewControllerL2Lesson2" customModule="example_iphone_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="L2Lesson2" id="5Ys-W6-GVX" customClass="ViewControllerL2Lesson2" customModule="example_iphone_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H5i-Rz-E47">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
