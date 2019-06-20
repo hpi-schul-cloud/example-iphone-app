@@ -38,7 +38,7 @@ final class ViewControllerRoot: UIViewController {
     }
 }
 
-extension ViewControllerRoot: DeeplinkNode {
+extension ViewControllerRoot: DeeplinkNode, StoryboardInstantiable {
     
     static var route: String? {
         return nil

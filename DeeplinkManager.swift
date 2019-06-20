@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    
     var isModal: Bool {
         
         let presentingIsModal = presentingViewController != nil
@@ -21,13 +20,14 @@ extension UIViewController {
     }
 }
 
-protocol DeeplinkNode: StoryboardInstantiable {
+protocol DeeplinkNode where Self: UIViewController {
     static var route: String? { get }
     static var childNodes: [DeeplinkNode.Type] { get }
 //    var parentNode: DeeplinkNode? { get set }
     
     // Instantiate ViewController hier hin.
     // Zwei Cases implementieren. -> From Storyboard oder Normal
+    static func instantiateViewController() -> Self
     
     static func getChildFor(pathName: String) -> DeeplinkNode.Type?
     
@@ -44,9 +44,13 @@ extension DeeplinkNode {
         return self.childNodes.first(where: {$0.route == pathName})
     }
     
+    static func instantiateViewController() -> Self {
+        return self.init()
+    }
+    
     static func pushViewController(onto navigationController: UINavigationController, using path: [String]) {
         var path = path
-        let vc = self.instantiateFromStoryboard()
+        let vc = self.instantiateViewController()
         navigationController.pushViewController(vc, animated: false)
         if(path.count > 0) {
             let child = getChildFor(pathName: path.removeFirst())
@@ -70,5 +74,8 @@ extension StoryboardInstantiable {
     }
 }
 
-
-// extension DeeplinkNode where Self: StoryboardInstantiable
+extension DeeplinkNode where Self: StoryboardInstantiable {
+    static func instantiateViewController() -> Self {
+        return self.instantiateFromStoryboard()
+    }
+}

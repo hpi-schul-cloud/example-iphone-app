@@ -30,7 +30,7 @@ class ViewControllerL1Lesson1: UIViewController {
 
 }
 
-extension ViewControllerL1Lesson1: DeeplinkNode {
+extension ViewControllerL1Lesson1: DeeplinkNode, StoryboardInstantiable {
     
     static var route: String? {
         return "Lesson1"
