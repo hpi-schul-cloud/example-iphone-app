@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(userActivity.webpageURL?.pathComponents)
         
+        let nc = UINavigationController()
+        ViewControllerRoot.pushViewController(onto: nc, using: ["Lecture2", "Lesson1"])
+//        self.window?.rootViewController = nc
+        self.window?.rootViewController?.present(nc, animated: true, completion: nil)
+        
         return false
     }
 
@@ -29,10 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let p1 = ViewControllerLecture1.instantiateFromStoryboard()
 //        nc.pushViewController(p1, animated: false)
 //        self.window?.rootViewController = nc
-        let nc = UINavigationController()
-        ViewControllerRoot.pushViewController(onto: nc, using: ["Lecture2", "Lesson1"])
-        self.window?.rootViewController = nc
         
+
         
         return true
     }

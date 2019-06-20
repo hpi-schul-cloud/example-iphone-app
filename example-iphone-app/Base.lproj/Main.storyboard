@@ -49,6 +49,75 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="aAt-74-EAm">
+            <objects>
+                <viewController id="FsW-1H-sBL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Au7-a0-LhQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmq-Mk-s6v">
+                                <rect key="frame" x="187" y="327" width="40" height="30"/>
+                                <state key="normal" title="Study"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="nLV-mH-3yV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0X-Vr-BkC">
+                                <rect key="frame" x="189.5" y="581" width="35" height="30"/>
+                                <state key="normal" title="Read"/>
+                                <connections>
+                                    <segue destination="7iN-GI-8f4" kind="show" id="H7N-Dh-AGl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2NH-CN-Myv" firstAttribute="bottom" secondItem="b0X-Vr-BkC" secondAttribute="bottom" constant="251" id="8xI-IO-dri"/>
+                            <constraint firstItem="Jmq-Mk-s6v" firstAttribute="centerX" secondItem="2NH-CN-Myv" secondAttribute="centerX" id="QdO-W9-A40"/>
+                            <constraint firstItem="Jmq-Mk-s6v" firstAttribute="top" secondItem="2NH-CN-Myv" secondAttribute="top" constant="239" id="w7H-wc-R0m"/>
+                            <constraint firstItem="b0X-Vr-BkC" firstAttribute="centerX" secondItem="2NH-CN-Myv" secondAttribute="centerX" id="yfg-xh-CxK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2NH-CN-Myv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="JC9-FG-P2P"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XuG-rn-dhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-270" y="783"/>
+        </scene>
+        <!--Read-->
+        <scene sceneID="Khi-cj-a0V">
+            <objects>
+                <viewController id="7iN-GI-8f4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ydv-78-OCe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hac-G8-1Bn">
+                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hac-G8-1Bn" firstAttribute="leading" secondItem="QaJ-Jj-TIR" secondAttribute="leading" constant="20" id="5hj-vl-0Vf"/>
+                            <constraint firstItem="QaJ-Jj-TIR" firstAttribute="trailing" secondItem="Hac-G8-1Bn" secondAttribute="trailing" constant="20" id="CKF-uf-9ku"/>
+                            <constraint firstItem="Hac-G8-1Bn" firstAttribute="top" secondItem="QaJ-Jj-TIR" secondAttribute="top" id="axe-KO-Tnw"/>
+                            <constraint firstItem="QaJ-Jj-TIR" firstAttribute="bottom" secondItem="Hac-G8-1Bn" secondAttribute="bottom" id="t7O-zF-65i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QaJ-Jj-TIR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Read" id="BhF-oa-HL9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z8T-1R-WOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="1225"/>
+        </scene>
         <!--Lecture 2-->
         <scene sceneID="DPN-zR-94x">
             <objects>
@@ -85,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iae-2p-VbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2083" y="702"/>
+            <point key="canvasLocation" x="2083" y="708"/>
         </scene>
         <!--Lecture 1-->
         <scene sceneID="sHQ-bB-RES">
@@ -198,12 +267,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Rna-eY-fg0"/>
+                        <segue destination="FsW-1H-sBL" kind="relationship" relationship="rootViewController" id="oNW-cx-uIH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSo-ji-p47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="139"/>
+            <point key="canvasLocation" x="-1509" y="783"/>
         </scene>
         <!--L2 | Lesson 1-->
         <scene sceneID="Vqd-Vk-PbI">

@@ -18,9 +18,17 @@ final class ViewControllerRoot: UIViewController {
 //        var leaf = firstChild.addChildFromString(value: "Lesson2", with: "L1Lesson2")
 //
 //        VCRoot.pushViewController(path: ["Lecture1", "Lesson2"])
-        
+        if self.isModal {
+            let button1 = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(close(_:)))
+            self.navigationItem.leftBarButtonItem  = button1
+        }
     }
-
+    
+    @IBAction func close(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func goToPath1(_ sender: UIButton) {
         
     }

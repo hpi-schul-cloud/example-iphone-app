@@ -9,106 +9,15 @@
 import Foundation
 import UIKit
 
-class VCNode {
-    var value: String?
-    var viewControllerIdentifier: String
-    var children: [VCNode] = []
-    weak var parent: VCNode?
-    var storyboard: UIStoryboard
-    var context: UIViewController
-    var isNamed: Bool {
-        get {
-            return value != nil
-        }
-    }
-    var hasParent: Bool {
-        get {
-            return parent != nil
-        }
-    }
+extension UIViewController {
     
-    init(value: String?, viewControllerIdentifier: String, context: UIViewController) {
-        self.value = value
-        self.storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.viewControllerIdentifier = viewControllerIdentifier
+    var isModal: Bool {
         
-        self.context = context
-    }
-    
-    func getChildFor(name: String) -> VCNode? {
-        return self.children.first(where: {$0.value == name})
-    }
-    
-    func add(child: VCNode) {
-        children.append(child)
-        child.parent = self
-    }
-    
-    func pushViewController(path: [String]) {
-        if self.hasParent {
-            var path = path
-            let thisNode = path.removeFirst()
-            let viewController = self.storyboard.instantiateViewController(withIdentifier: self.viewControllerIdentifier)
-            self.context.navigationController?.pushViewController(viewController, animated: true)
-            print(self.viewControllerIdentifier)
-            if(path.count > 0) {
-                let childOnPath = self.getChildFor(name: path[0])
-                childOnPath?.pushViewController(path: path)
-            }
-        } else {
-            let childOnPath = self.getChildFor(name: path[0])
-            childOnPath?.pushViewController(path: path)
-        }
-    }
-
-//    fileprivate func pushViewController(path: [VCNode]) {
-//        var path = path
-//        for node in path {
-//            let vc = self.storyboard.instantiateViewController(withIdentifier: node.viewControllerIdentifier)
-//            self.context.navigationController?.pushViewController(vc, animated: true)
-//        }
-//    }
-//
-//    fileprivate func collectPathToViewController(path: [VCNode]) {
-//        var path = path
-//        if self.hasParent {
-//            path.insert(self, at: 0)
-//            self.parent!.collectPathToViewController(path: path)
-//        } else {
-//            self.pushViewController(path: path)
-//        }
-//    }
-//
-//    func showViewController() {
-//        if self.hasParent {
-//            self.parent!.collectPathToViewController(path: [self])
-//        }
-//    }
-    
-    func addChildFromString(value: String, with identifier: String) -> VCNode {
-        let childNode = VCNode.init(value: value, viewControllerIdentifier: identifier, context: self.context)
-        self.children.append(childNode)
-        childNode.parent = self
+        let presentingIsModal = presentingViewController != nil
+        let presentingIsNavigation = navigationController?.presentingViewController?.presentedViewController == navigationController
+        let presentingIsTabBar = tabBarController?.presentingViewController is UITabBarController
         
-        return childNode
-    }
-    
-    func getRouteAsArray() -> [String] {
-        var history: [String] = []
-        if let existingValue = self.value {
-            if let existingParent = self.parent {
-                history = existingParent.getRouteAsArray()
-                history.append(existingValue)
-            } else {
-                history = [existingValue]
-            }
-        }
-        return history
-    }
-    
-    func getRouteAsString() -> String {
-        let history = getRouteAsArray()
-        return "/\(history.joined(separator: "/"))"
+        return presentingIsModal || presentingIsNavigation || presentingIsTabBar
     }
 }
 
@@ -116,6 +25,9 @@ protocol DeeplinkNode: StoryboardInstantiable {
     static var route: String? { get }
     static var childNodes: [DeeplinkNode.Type] { get }
 //    var parentNode: DeeplinkNode? { get set }
+    
+    // Instantiate ViewController hier hin.
+    // Zwei Cases implementieren. -> From Storyboard oder Normal
     
     static func getChildFor(pathName: String) -> DeeplinkNode.Type?
     
@@ -143,7 +55,6 @@ extension DeeplinkNode {
     }
 }
 
-
 protocol StoryboardInstantiable where Self: UIViewController {
     static var storyboardId: String { get }
     static var storyboardName: String { get }
@@ -158,3 +69,6 @@ extension StoryboardInstantiable {
         return viewController as! Self
     }
 }
+
+
+// extension DeeplinkNode where Self: StoryboardInstantiable
