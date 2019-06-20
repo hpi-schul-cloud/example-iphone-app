@@ -111,3 +111,50 @@ class VCNode {
         return "/\(history.joined(separator: "/"))"
     }
 }
+
+protocol DeeplinkNode: StoryboardInstantiable {
+    static var route: String? { get }
+    static var childNodes: [DeeplinkNode.Type] { get }
+//    var parentNode: DeeplinkNode? { get set }
+    
+    static func getChildFor(pathName: String) -> DeeplinkNode.Type?
+    
+    static func pushViewController(onto navigationController: UINavigationController, using path: [String])
+}
+
+extension DeeplinkNode {
+    // Default Implementation
+    static var childNode: [DeeplinkNode.Type] {
+        return []
+    }
+    
+    static func getChildFor(pathName: String) -> DeeplinkNode.Type? {
+        return self.childNodes.first(where: {$0.route == pathName})
+    }
+    
+    static func pushViewController(onto navigationController: UINavigationController, using path: [String]) {
+        var path = path
+        let vc = self.instantiateFromStoryboard()
+        navigationController.pushViewController(vc, animated: false)
+        if(path.count > 0) {
+            let child = getChildFor(pathName: path.removeFirst())
+            child?.pushViewController(onto: navigationController, using: path)
+        }
+    }
+}
+
+
+protocol StoryboardInstantiable where Self: UIViewController {
+    static var storyboardId: String { get }
+    static var storyboardName: String { get }
+    
+    static func instantiateFromStoryboard() -> Self
+}
+
+extension StoryboardInstantiable {
+    static func instantiateFromStoryboard() -> Self {
+        let storyboard = UIStoryboard(name: self.storyboardName, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: self.storyboardId)
+        return viewController as! Self
+    }
+}

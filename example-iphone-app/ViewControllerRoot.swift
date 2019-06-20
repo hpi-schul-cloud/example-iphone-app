@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ViewControllerRoot: UIViewController {
+final class ViewControllerRoot: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var VCRoot = VCNode(value: nil, viewControllerIdentifier: "root", context: self)
-        var firstChild = VCRoot.addChildFromString(value: "Lecture1", with: "Lecture1")
-        var leaf = firstChild.addChildFromString(value: "Lesson2", with: "L1Lesson2")
-
-        VCRoot.pushViewController(path: ["Lecture1", "Lesson2"])
+//        var VCRoot = VCNode(value: nil, viewControllerIdentifier: "root", context: self)
+//        var firstChild = VCRoot.addChildFromString(value: "Lecture1", with: "Lecture1")
+//        var leaf = firstChild.addChildFromString(value: "Lesson2", with: "L1Lesson2")
+//
+//        VCRoot.pushViewController(path: ["Lecture1", "Lesson2"])
         
     }
 
@@ -28,6 +28,23 @@ class ViewControllerRoot: UIViewController {
     @IBAction func goToPath2(_ sender: UIButton) {
         
     }
+}
 
+extension ViewControllerRoot: DeeplinkNode {
+    
+    static var route: String? {
+        return nil
+    }
+    
+    static var childNodes: [DeeplinkNode.Type] {
+        return [ViewControllerLecture1.self as DeeplinkNode.Type, ViewControllerLecture2.self as DeeplinkNode.Type]
+    }
+    
+    static var storyboardId: String {
+        return "root"
+    }
+    static var storyboardName: String {
+        return "Main"
+    }
 }
 

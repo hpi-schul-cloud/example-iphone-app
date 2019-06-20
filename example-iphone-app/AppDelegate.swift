@@ -24,6 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        let vc = ViewControllerRoot.instantiateFromStoryboard()
+//        let nc = UINavigationController(rootViewController: vc)
+//        let p1 = ViewControllerLecture1.instantiateFromStoryboard()
+//        nc.pushViewController(p1, animated: false)
+//        self.window?.rootViewController = nc
+        let nc = UINavigationController()
+        ViewControllerRoot.pushViewController(onto: nc, using: ["Lecture1", "Lesson1"])
+        self.window?.rootViewController = nc
+        
+        
         return true
     }
 

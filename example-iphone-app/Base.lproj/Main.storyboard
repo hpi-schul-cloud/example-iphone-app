@@ -128,7 +128,7 @@
         <!--L1 | Lesson 1-->
         <scene sceneID="Ta9-yd-AUM">
             <objects>
-                <viewController id="QMI-kU-Ou8" customClass="ViewControllerL1Lesson1" customModule="example_iphone_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="L1Lesson1" id="QMI-kU-Ou8" customClass="ViewControllerL1Lesson1" customModule="example_iphone_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zup-A1-ha5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
