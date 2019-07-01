@@ -17,10 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         
-        print(userActivity.webpageURL?.pathComponents)
+        let path = userActivity.webpageURL!.pathComponents
+        
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+            let incomingURL = userActivity.webpageURL,
+            let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true),
+            let params = components.queryItems else {
+                return false
+        }
+        
+        print("Url: \(path)")
+        let jwt = params.first(where: {$0.name == "jwt"})?.value
+        print("Params: \(type(of: params))")
+//        print("Query: \(jwt)")
         
         let nc = UINavigationController()
-        ViewControllerRoot.pushViewController(onto: nc, using: ["Lecture2", "Lesson1"])
+        ViewControllerRoot.pushViewController(onto: nc, using: [path[1], path[2]])
 //        self.window?.rootViewController = nc
         self.window?.rootViewController?.present(nc, animated: true, completion: nil)
         
